@@ -43,17 +43,24 @@ Once the file is imported properly, you can execute the following example comman
    INNER JOIN payments ON invoices.invoice_id = payments.fk_invoice_id
    GROUP BY students.first_name, students.last_name, payments.payer_first_name, payments.payer_last_name;
 
-9. --Shows all the invoices that have payments made over $1,100.00 and any related information
+9. --Shows all the students enrolled in 'Computer Science'
+
+   SELECT students.first_name, students.last_name, enrollments.enrollment_name FROM students
+   JOIN students_enrollments ON students.student_id = students_enrollments.fk_student_id
+   JOIN enrollments ON students_enrollments.fk_enrollment_id = enrollments.enrollment_id
+   WHERE enrollment_name = 'Computer Science'
+   ORDER BY last_name;   
+
+10. --Shows all payments made after 10/1/2025 in the payments table
+
+   SELECT * FROM payments
+   WHERE payment_date > '2025-10-01';
+
+11. --Shows all the invoices that have payments made over $1,100.00 and any related information
 
    SELECT * FROM invoices
    INNER JOIN payments ON invoices.invoice_id = payments.fk_invoice_id
    WHERE payment_amount::numeric::integer > 1100
    ORDER BY payer_first_name ASC;
    
-10. --Shows all the students enrolled in 'Computer Science'
 
-   SELECT students.first_name, students.last_name, enrollments.enrollment_name FROM students
-   JOIN students_enrollments ON students.student_id = students_enrollments.fk_student_id
-   JOIN enrollments ON students_enrollments.fk_enrollment_id = enrollments.enrollment_id
-   WHERE enrollment_name = 'Computer Science'
-   ORDER BY last_name;
