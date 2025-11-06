@@ -53,14 +53,14 @@ Once the file is imported properly, you can execute the following example comman
 
 10. --Shows all payments made after 10/1/2025 in the payments table
 
-   SELECT * FROM payments
-   WHERE payment_date > '2025-10-01';
+    SELECT * FROM payments
+    WHERE payment_date > '2025-10-01';
 
 11. --Shows all the invoices that have payments made over $1,100.00 and any related information
 
-   SELECT * FROM invoices
-   INNER JOIN payments ON invoices.invoice_id = payments.fk_invoice_id
-   WHERE payment_amount::numeric::integer > 1100
-   ORDER BY payer_first_name ASC;
+    SELECT * FROM invoices
+    INNER JOIN payments ON invoices.invoice_id = payments.fk_invoice_id
+    WHERE payment_amount::numeric::integer > 1100
+    ORDER BY payer_first_name ASC;
    
 
