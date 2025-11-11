@@ -1,9 +1,9 @@
 # school-sql-analytics
-This repository showcases a database schema that resembles a school's Student Information System. It is popluated with data for students enrolled in a technical school in eastern Massachusetts. 
+This repository showcases a database schema that resembles a school's Student Information System. It is popluated with test data for students enrolled in a technical school in eastern Massachusetts. 
 
 To access the database, simply download or pull the file 'Test_School_DB - With Test Data.sql' and load it into your PostgreSQL application of choice. Be sure to have PostgreSQL installed on your machine from the official website. 
 
-Once the file is imported properly, you can execute the following example commands to query data within the database (Query CODE | Commented Description):
+Once the file is imported properly, input the password "postgres" if prompted. You can execute the following example commands to query data within the database (Commented Description | Query CODE):
 
 1. --Shows all the columns and rows within the students table
 
